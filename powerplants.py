@@ -38,4 +38,4 @@ def combined_powerplants(merit_order, load):
             solution += missing
             result.append({"name": powerplant["name"], "p": missing})
         else: 
-            result.append({"name": powerplant["name"], "p": 0})
+            result.append({"name": powerplant["name"], "p": 0.0})
