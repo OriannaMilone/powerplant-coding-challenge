@@ -39,5 +39,11 @@ def combined_powerplants(merit_order, load):
             result.append({"name": powerplant["name"], "p": missing})
         else: 
             result.append({"name": powerplant["name"], "p": 0.0})
-    # if solution != load:
+    
+    # if int(solution) != load:
     #     result.clear()
+    #     halfpower = merit_order[0]["power_range"][0] + merit_order[0]["power_range"][1] / 2
+    #     merit_order[0]["power_range"] = (merit_order[0]["power_range"][0], halfpower)
+    #     combined_powerplants(merit_order, load)
+    # else: 
+    #     return result
