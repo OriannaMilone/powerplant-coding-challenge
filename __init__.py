@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import json
 import powerplants
 
@@ -19,7 +19,7 @@ def energyproduction():
    with open('./response3.json', 'w') as response_file:
         json.dump(powerplants_selected, response_file, indent=4)
    
-   return powerplants_selected
+   return jsonify(powerplants_selected)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8888)

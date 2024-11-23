@@ -27,18 +27,15 @@ def calculated_cost(powerplant, gas_price, kerosine_price, wind):
     
 
 def combined_powerplants(merit_order, load):
-    i = 0
     solution =  0
     missing = load
-    while solution != load:
+    for powerplant in merit_order:
         missing = load - solution
-        if merit_order[i]["power_range"][1] <= missing:
-            solution += merit_order[i]["power_range"][1]
-            result.append({"name": merit_order[i]["name"], "p": merit_order[i]["power_range"][1]})
-        elif merit_order[i]["power_range"][0] < missing and missing < merit_order[i]["power_range"][1]:
+        if powerplant["power_range"][1] <= missing:
+            solution += powerplant["power_range"][1]
+            result.append({"name": powerplant["name"], "p": powerplant["power_range"][1]})
+        elif powerplant["power_range"][0] < missing and missing < powerplant["power_range"][1]:
             solution += missing
-            result.append({"name": merit_order[i]["name"], "p": missing})
+            result.append({"name": powerplant["name"], "p": missing})
         else: 
-            result.append({"name": merit_order[i]["name"], "p": 0})
-        i += 1
-    return True
+            result.append({"name": powerplant["name"], "p": 0})
