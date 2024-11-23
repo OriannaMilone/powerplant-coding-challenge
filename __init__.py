@@ -26,8 +26,7 @@ def energyproduction():
         
     powerplants_selected = powerplants.selected_powerplants(load, gas_price, kerosine_price, wind, powerplants_list)
 
-    #Falta meterlo en la carpeta que
-    response_filename = f'./response{X}.json'
+    response_filename = f'example_payloads/response{X}.json'
     with open(response_filename, 'w') as response_file:
             json.dump(powerplants_selected, response_file, indent=4)
     

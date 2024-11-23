@@ -16,13 +16,11 @@ except FileNotFoundError:
 except json.JSONDecodeError:
     exit(1)
 
-#####
 try:
-    X = int(args.filename.split('payload')[1].split('.json')[0])  # Extraer X de 'payloadX.json'
+    X = int(args.filename.split('payload')[1].split('.json')[0])  
 except (IndexError, ValueError):
     print("Error: Invalid filename format. It should be 'payloadX.json'.")
     exit(1)
-#####
 
 url = "http://127.0.0.1:8888/energyproduction"
 headers = {"Content-Type": "application/json",
@@ -37,10 +35,3 @@ except requests.exceptions.RequestException as e:
     print(f"Somenthing went wrong: {e}")
     exit(1)
     
-
-
-
-
-
-
-
