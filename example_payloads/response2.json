@@ -9,11 +9,11 @@
     },
     {
         "name": "gasfiredbig1",
-        "p": 460
+        "p": 100
     },
     {
         "name": "gasfiredbig2",
-        "p": 0.0
+        "p": 380.0
     },
     {
         "name": "gasfiredsomewhatsmaller",
@@ -21,6 +21,6 @@
     },
     {
         "name": "tj1",
-        "p": 16
+        "p": 0.0
     }
 ]
